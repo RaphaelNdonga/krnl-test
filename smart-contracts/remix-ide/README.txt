@@ -1,4 +1,7 @@
-REMIX DEFAULT WORKSPACE
+FORKED FROM REMIX DEFAULT TEMPLATE
+
+
+REMIX DEFAULT TEMPLATE README BELOW THIS LINE
 
 Remix default workspace is present when:
 i. Remix loads for the very first time 
