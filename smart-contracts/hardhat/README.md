@@ -19,7 +19,7 @@ npm run sepolia
 ### Optional - In case that you want to try deploying on Devnet
 
 ```shell
-npm run sepolia
+npm run deploy
 ```
 
 ## EXTRA - In case you want to recompile Solidity without using default Hardhat commands
