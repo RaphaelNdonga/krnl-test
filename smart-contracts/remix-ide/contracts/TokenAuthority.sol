@@ -70,11 +70,6 @@ contract TokenAuthority is Ownable {
         string name;
         string url;
     }
-    function decode190(
-        bytes memory data
-    ) public pure returns (IdentificationWrapper memory) {
-        return abi.decode(data, (IdentificationWrapper));
-    }
    
     function _validateExecution(bytes calldata executionPlan)
         external
