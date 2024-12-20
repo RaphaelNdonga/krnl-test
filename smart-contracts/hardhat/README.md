@@ -1,5 +1,7 @@
 # KRNL Hardhat Template
 
+Follow these steps if you want to use Hardhat as a smart contract development tool.
+
 ## 1. Install dependencies
 
 ```shell
