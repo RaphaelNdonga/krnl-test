@@ -8,34 +8,10 @@ Follow these steps if you want to use Hardhat as a smart contract development to
 npm install
 ```
 
-## 2. Modify Opinion Maker contract
+## 2. Fill .env
 
-## 3. Deploy on Sepolia
-
-```shell
-npm run sepolia
-```
-
-### Optional - In case that you want to try deploying on Devnet
+## 3. Deploy
 
 ```shell
 npm run deploy
-```
-
-## EXTRA - In case you want to recompile Solidity without using default Hardhat commands
-
-```shell
-npm run cnc
-```
-
-
-# From Hardhat default init
-
-
-```shell
-npx hardhat help
-npx hardhat test
-REPORT_GAS=true npx hardhat test
-npx hardhat node
-npx hardhat ignition deploy ./ignition/modules/Lock.ts
 ```

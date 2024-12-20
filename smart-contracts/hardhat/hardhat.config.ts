@@ -27,22 +27,17 @@ const config: HardhatUserConfig = {
       chainId: 23295,
       accounts: [`0x${process.env.PRIVATE_KEY_OASIS}`],
     },
-    'devnet': {
-      url: `${process.env.DEVNET_RPC}`,
-      chainId: 14121,
-      accounts: [`0x${process.env.PRIVATE_KEY_DEVNET}`],
-    },
   },
   etherscan: {
     apiKey: process.env.ETHERSCAN_API_KEY
   },
-  sourcify: {
-    enabled: true
-    // Optional: specify a different Sourcify server
-    // apiUrl: "https://sourcify.dev/server",
-    // Optional: specify a different Sourcify repository
-    // browserUrl: "https://repo.sourcify.dev",
-  }
+  // sourcify: {
+  //   enabled: true
+  //   // Optional: specify a different Sourcify server
+  //   // apiUrl: "https://sourcify.dev/server",
+  //   // Optional: specify a different Sourcify repository
+  //   // browserUrl: "https://repo.sourcify.dev",
+  // }
 }
 
 export default config;

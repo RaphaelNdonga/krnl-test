@@ -5,8 +5,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "cnc": "hardhat clean && hardhat compile",
-    "sepolia": "hardhat clean && hardhat compile && hardhat run scripts/deploySepolia.ts --network sapphire-testnet",
-    "deploy": "hardhat clean && hardhat compile && hardhat run scripts/deploy.ts --network sapphire-testnet"
+    "deploy": "hardhat clean && hardhat compile && hardhat run scripts/deploy.ts --network sepolia"
   },
   "author": "",
   "license": "ISC",
