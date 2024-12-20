@@ -6,29 +6,10 @@
 npm install
 ```
 
-## 2. Modify Opinion Maker contract
+## 2. Fill .env
 
-## 3. deploy
+## 3. Deploy
 
 ```shell
 npm run deploy
-```
-
-### Extra - In case that you want to try deploying on Sepolia
-
-```shell
-npm run sepolia
-```
-
-
-
-# From Hardhat default init
-
-
-```shell
-npx hardhat help
-npx hardhat test
-REPORT_GAS=true npx hardhat test
-npx hardhat node
-npx hardhat ignition deploy ./ignition/modules/Lock.ts
 ```
