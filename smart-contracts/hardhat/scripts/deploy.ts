@@ -3,7 +3,7 @@ import * as dotenv from "dotenv";
 
 async function main() {
   const [deployer] = await ethers.getSigners();
-  
+
   const walletAddress = deployer.address;
 
   const ownerAddress = process.env.INITIAL_OWNER_ADDRESS || walletAddress;
@@ -26,10 +26,10 @@ async function main() {
   const addressTokenAuthority = contractTokenAuthority.target;
   console.log("Contract deployed to:", addressTokenAuthority);
   //   console.log("Contract: ", contractTokenAuthority)
-  await new Promise(r => setTimeout(r, 15000));
+  await contractTokenAuthority.waitForDeployment()
   const [TAPublicKeyHash, TAPublicKeyAddress] = await contractTokenAuthority.getSigningKeypairPublicKey();
 
-  console.log("Token Authority Public Key in hash value:",TAPublicKeyHash)
+  console.log("Token Authority Public Key in hash value:", TAPublicKeyHash)
   console.log("Token Authority Public Key in address value:", TAPublicKeyAddress)
   console.log("======================================")
 
@@ -45,19 +45,19 @@ async function main() {
   console.log("Contract deployed to:", addressMain);
   //   console.log("Contract: ", contractMain)
 
-  
+
   // VERIFYING PART
   await new Promise(r => setTimeout(r, 60000));
   try {
-      console.log("TRY VERIFYING CONTRACT");
-      await run("verify:verify", {
-          address: addressMain,
-          constructorArguments: [TAPublicKeyAddress],
-        });
-        console.log(`CONTRACT: ${addressMain} IS VERIFIED ON ETHERSCAN`);
-    } catch (error: any) {
-        console.error("VERIFY FAILED WITH ERROR:", error.message);
-    }
+    console.log("TRY VERIFYING CONTRACT");
+    await run("verify:verify", {
+      address: addressMain,
+      constructorArguments: [TAPublicKeyAddress],
+    });
+    console.log(`CONTRACT: ${addressMain} IS VERIFIED ON ETHERSCAN`);
+  } catch (error: any) {
+    console.error("VERIFY FAILED WITH ERROR:", error.message);
+  }
 
   // SUMMARY
   console.log("=====SUMMARY=====")
