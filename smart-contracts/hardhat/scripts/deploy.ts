@@ -39,25 +39,17 @@ async function main() {
   const providerMain = new ethers.JsonRpcProvider(`https://sepolia.infura.io/v3/${process.env.INFURA_PROJECT_ID}`);
   const walletMain = new ethers.Wallet(`${process.env.PRIVATE_KEY_SEPOLIA}`, providerMain);
 
-  const ContractMain = await ethers.getContractFactory("Sample", walletMain);
+  const ContractMain = await ethers.getContractFactory("FreeTokens", walletMain);
   const contractMain = await ContractMain.deploy(TAPublicKeyAddress);
+  await contractMain.waitForDeployment();
   const addressMain = contractMain.target;
   console.log("Contract deployed to:", addressMain);
   //   console.log("Contract: ", contractMain)
 
-
-  // VERIFYING PART
-  await new Promise(r => setTimeout(r, 60000));
-  try {
-    console.log("TRY VERIFYING CONTRACT");
-    await run("verify:verify", {
-      address: addressMain,
-      constructorArguments: [TAPublicKeyAddress],
-    });
-    console.log(`CONTRACT: ${addressMain} IS VERIFIED ON ETHERSCAN`);
-  } catch (error: any) {
-    console.error("VERIFY FAILED WITH ERROR:", error.message);
-  }
+  console.log("=============== GET BALANCE TRANSACTION ==============")
+  let balance = await contractMain.viewBalance(deployer.address)
+  console.log("Balance: ", balance)
+  console.log("======================================================")
 
   // SUMMARY
   console.log("=====SUMMARY=====")

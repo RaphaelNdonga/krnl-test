@@ -14,7 +14,7 @@
     "@nomicfoundation/hardhat-toolbox": "^5.0.0",
     "@nomicfoundation/hardhat-verify": "^2.0.11",
     "@oasisprotocol/sapphire-contracts": "^0.2.11",
-    "@openzeppelin/contracts": "^5.1.0",
+    "@openzeppelin/contracts": "^5.2.0",
     "hardhat": "^2.22.14"
   },
   "dependencies": {
